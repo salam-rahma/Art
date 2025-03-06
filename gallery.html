@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Art Exploration Hub</title> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Bangers&family=Chewy&family=DM+Serif+Text:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./artists.html">Artists</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">☰</div>
+    </nav>
+
+    <!-- Mobile Nav Bar -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="./index.html">Home</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./artists.html">Artists</a>
+        <a href="./contact.html">Contact</a>
+    </div>
+
+    <!-- Artist Sections -->
+    <div id="vanGogh" class="artist-section">
+        <h2>Vincent van Gogh</h2>
+        <div id="vanGoghGallery" class="gallery"></div>
+    </div>
+
+    <div id="dali" class="artist-section">
+        <h2>Salvador Dalí</h2>
+        <div id="daliGallery" class="gallery"></div>
+    </div>
+
+    <div id="daVinci" class="artist-section">
+        <h2>Leonardo da Vinci</h2>
+        <div id="daVinciGallery" class="gallery"></div>
+    </div>
+
+    <div id="vermeer" class="artist-section">
+        <h2>Johannes Vermeer</h2>
+        <div id="vermeerGallery" class="gallery"></div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">X</span>
+        <img id="lightbox-img" src="" alt="Full image">
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>About Us</h3>
+                <p>Explore the world of art through our carefully curated pages featuring historical masterpieces and talented artists.</p>
+            </div>
+    
+            <div class="footer-center">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./artists.html">Artists</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <p>Email: info@artwebsite.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Follow us:</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <p class="footer-bottom">© 2024 ArtWebsite. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Function to fetch and display artwork for a given painting title
+        function fetchAndDisplayArtworkByTitle(paintingTitle, galleryId) {
+            const searchQuery = encodeURIComponent(paintingTitle);
+            const apiUrl = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${searchQuery}&hasImages=true&objectType=Paintings&limit=6`;
+    
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const artworks = data.objectIDs.slice(0, 6); // Limit to 6 artworks
+                    const gallery = document.getElementById(galleryId);
+    
+                    artworks.forEach(artworkId => {
+                        fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artworkId}`)
+                            .then(response => response.json())
+                            .then(artwork => {
+                                // Skip the "Gertrude Stein" painting
+                                if (artwork.title === "Gertrude Stein" && artwork.objectDate === "1905–6") {
+                                    return;
+                                }
+    
+                                const img = document.createElement('img');
+                                const imgUrl = artwork.primaryImageSmall || artwork.primaryImage || 'https://via.placeholder.com/300x400?text=No+Image';
+                                img.src = imgUrl;
+                                img.alt = artwork.title || 'No Title';
+    
+                                const title = document.createElement('h3');
+                                title.innerText = artwork.title || 'No Title Available';
+    
+                                const date = document.createElement('p');
+                                date.innerText = artwork.objectDate || 'Date not available';
+    
+                                // When the image is clicked, open in lightbox
+                                img.addEventListener("click", () => {
+                                    openLightbox(artwork.primaryImage || 'https://via.placeholder.com/300x400?text=No+Image');
+                                });
+    
+                                const galleryItem = document.createElement("div");
+                                galleryItem.classList.add("gallery-item");
+                                galleryItem.appendChild(img);
+                                galleryItem.appendChild(title);
+                                galleryItem.appendChild(date);
+                                gallery.appendChild(galleryItem);
+                            });
+                    });
+                })
+                .catch(error => console.error("Error fetching artwork:", error));
+        }
+    
+        // Open lightbox with the clicked image
+        function openLightbox(imageUrl) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            lightbox.style.display = "flex";
+            lightboxImg.src = imageUrl;
+        }
+    
+        // Close the lightbox
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    
+        // Fetch artwork for multiple artists and divide them into sections
+        fetchAndDisplayArtworkByTitle("Vincent van Gogh", "vanGoghGallery");
+        fetchAndDisplayArtworkByTitle("Salvador Dalí", "daliGallery");
+        fetchAndDisplayArtworkByTitle("Leonardo da Vinci", "daVinciGallery");
+        fetchAndDisplayArtworkByTitle("Vermeer", "vermeerGallery");
+    
+    </script>
+    
+    </body>
+ 

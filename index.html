@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Art Exploration Hub</title> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Bangers&family=Chewy&family=DM+Serif+Text:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./artists.html">Artists</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">☰</div>
+    </nav>
+
+    <!-- Mobile Nav Bar -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="./index.html">Home</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./artists.html">Artists</a>
+        <a href="./contact.html">Contact</a>
+    </div>
+
+    <!-- Sections -->
+    <section class="header">
+        <div class="background">   
+        <img src="./Home-page-images/girlwithaPearlEariing-removebg-preview.png" >  
+        </div>
+        <h1 class="header-title">Art Exploration Hub</h1>
+        <p class="header-par"> <br> <strong> Discover the world of art like never before.</strong> <br> Explore a rich collection of artworks, artists,<br> and museums with open-access resources.<br> Whether you're an art lover, a researcher, or a creator,<br> our platform connects you to masterpieces from around <br> the world—completely free.<br> Start your journey today! </p>
+        <img class="header-img" src="./Home-page-images/The Starry Night.jpg"> 
+        <a href="#about-us" class="header-button">Discover more</a>
+
+    </section>
+
+    <section id="about-us" class="about-us">
+        <h1 class="title"> About Art Exploration Hub </h1>
+        <p class="about-par">Our website features four sections, each showcasing different pages related to art and artists. You can reach out to us through the contact page for any inquiries or feedback.  </p>
+        <div class="about-container">
+            <img class="about-img" src="./Home-page-images/Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg">
+            <img class="about-img" src="./Home-page-images/Raphael_missing.jpg">
+            <img class="about-img" src="./Home-page-images/The_Arnolfini_portrait_(1434).jpg">
+        </div>
+        <div class="button-container">
+            <a href="./gallery.html" class="button"> Visit the Hub Gallery</a>
+        </div>  
+    </section>
+
+    <section class="artists">
+        <h2 class="title">Random Artist Information</h2>
+        <div class="artist-container" id="artistInfo">
+            <div class="artist-info">
+                <h3 >Artist name: <span id="artistTitle"></span></h3>
+                <p>Born:<span id="birthDate"></span></p>
+                <p id="artistDescription"> <br></p>
+            </div>
+            <img id="artistImage" src="" alt="Artist Image">
+        </div>
+        <div class="button-container">
+            <a href="./artists.html" class="button"> Discover more Artists</a>
+    </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>About Us</h3>
+                <p>Explore the world of art through our carefully curated pages featuring historical masterpieces and talented artists.</p>
+            </div>
+    
+            <div class="footer-center">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./artists.html">Artists</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <p>Email: info@artwebsite.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Follow us:</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <p class="footer-bottom">© 2024 ArtWebsite. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');  // Toggle for desktop nav
+            mobileMenu.classList.toggle('active');  // Toggle for mobile nav
+        });
+        gsap.from(".background", { x: "100%", opacity: 0, duration: 2, ease: "power2.out" });
+        gsap.from(".header-title", { x: "-100%", opacity: 0, duration: 2, ease: "power2.out", delay: 0.3 });
+        gsap.from(".header-par", { x: "-100%", opacity: 0, duration: 2, ease: "power2.out", delay: 0.6 });
+        
+        
+        // List of random artists to choose from
+        const artists = [
+                "Leonardo da Vinci", 
+                "Michelangelo", 
+                "Raphael", 
+                "Caravaggio", 
+                "Rembrandt", 
+                "Johannes Vermeer", 
+                "Francisco Goya", 
+                "Eugène Delacroix", 
+                "J.M.W. Turner", 
+                "Vincent van Gogh"
+        ];
+        
+        // Pick a random artist from the list
+        function getRandomArtist() {
+            const randomIndex = Math.floor(Math.random() * artists.length);
+            return artists[randomIndex];
+        }
+        
+        // Fetch artist info from Wikidata
+        async function fetchRandomArtistInfo() {
+            const name = getRandomArtist();
+            const url = `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${name}&language=en&format=json&origin=*`;
+        
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+        
+                if (data.search.length > 0) {
+                    const entityId = data.search[0].id;
+                    const detailsUrl = `https://www.wikidata.org/wiki/Special:EntityData/${entityId}.json`;
+        
+                    const detailsResponse = await fetch(detailsUrl);
+                    const detailsData = await detailsResponse.json();
+                    const entity = detailsData.entities[entityId];
+        
+                    // Get artist name
+                    const artistTitle = entity.labels.en ? entity.labels.en.value : "Unknown";
+        
+                    // Get artist image
+                    let imageUrl = "";
+                    if (entity.claims.P18) {
+                        const imageName = entity.claims.P18[0].mainsnak.datavalue.value;
+                        imageUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${imageName}?width=300`;
+                    }
+        
+                    // Get birth date
+                    let birthDate = "Unknown";
+                    if (entity.claims.P569) {
+                        birthDate = entity.claims.P569[0].mainsnak.datavalue.value.time.slice(1, 11);
+                    }
+        
+                    // Get artist description
+                    const descriptionUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${name.replace(" ", "_")}`;
+                    const descriptionResponse = await fetch(descriptionUrl);
+                    const descriptionData = await descriptionResponse.json();
+                    const description = descriptionData.extract || "No description available.";
+        
+                    // Update the page
+                    document.getElementById("artistTitle").innerText = artistTitle;
+                    document.getElementById("artistImage").src = imageUrl;
+                    document.getElementById("birthDate").innerText = birthDate;
+                    document.getElementById("artistDescription").innerText = description;
+                    document.getElementById("artistImage").style.display = "block"; // Show image when data is fetched
+                } else {
+                    alert("Artist not found. Try another name.");
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                alert("Error fetching artist info.");
+            }
+        }
+        
+        // Fetch a random artist's info when the page loads
+        window.onload = fetchRandomArtistInfo;
+        </script>
+   
+</body>
