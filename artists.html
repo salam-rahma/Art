@@ -72,6 +72,14 @@
         <p class="footer-bottom">© 2024 ArtWebsite. All Rights Reserved.</p>
     </footer>
     <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');  // Toggle for desktop nav
+            mobileMenu.classList.toggle('active');  // Toggle for mobile nav
+        });
        const artists = [
     { name: "Vincent van Gogh", image: "images/Vincent_van_Gogh.png" },
     { name: "Salvador Dalí", image: "images/salvador-dali-.png" },

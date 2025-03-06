@@ -89,6 +89,14 @@
     </footer>
 
     <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');  // Toggle for desktop nav
+            mobileMenu.classList.toggle('active');  // Toggle for mobile nav
+        });
       function sendMessage() {
     let message = document.getElementById("messageInput").value.trim();
     if (message) {
