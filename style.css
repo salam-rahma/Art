@@ -391,15 +391,16 @@ body {
     }
 
     .about-container {
-        flex-direction: column; /* Stack images on top of each other */
+        flex-direction: column; 
     }
 
     .about-img {
-        width: 80%; /* Make images responsive */
-        max-width: 400px; /* Limit maximum size */
+        width: 80%; 
+        max-width: 400px; 
+        margin: 40px;
     }
 
-    button {
+    .button {
         font-size: 18px;
         padding: 8px 14px;
         margin-top: 10px;
@@ -414,9 +415,10 @@ body {
     .about-img {
         width: 90%; 
         max-width: 350px;
+        margin: 30px;
     }
 
-    button {
+    .button {
         font-size: 16px;
         padding: 8px 12px;
         margin-top: 10px;
