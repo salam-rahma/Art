@@ -19,7 +19,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Nav Bar */
+
+/* ------ Nav Bar ------- */
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -49,14 +51,14 @@ body {
     color: var(--champage);
 }
 
-/* Mobile Menu */
+/* ----- Mobile Menu ----- */
+
 .menu-toggle {
     display: none;
     font-size: 1.5em;
     cursor: pointer;
 }
 
-/* Mobile Menu */
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -85,7 +87,8 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Show mobile menu on smaller screens */
+/* ------ Show mobile menu on smaller screens -----------*/
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -101,7 +104,8 @@ body {
         display: flex; 
     }
 }
-/*First Section in Home page*/
+
+/*----------First Section in Home page ---------*/
 .header{
    height: 100vh;
    background-color: var(--dark-charcoal);
@@ -118,18 +122,6 @@ body {
     z-index: 2;  
     position: absolute;
 }
-@media screen and (min-width: 1024px){
-    .background{ padding-left: 600px;
-        height: 100vh;
-        background-repeat: no-repeat;
-        background-position: center; 
-        background-size: cover;
-        padding-top: 50px;
-        z-index: 2;  
-        position: absolute;}
-}
-    
-
 .header-title{
     font-family: "Newsreader";
     background: linear-gradient(to top, #231f13,#C0A483);
@@ -141,7 +133,6 @@ body {
     top: 5%;
     left: 8%;
 }
-
 .header-par{
     font-family: "Pinyon Script";
     color: var(--soft-gray);
@@ -153,7 +144,6 @@ body {
     padding: 10px;
     border-radius: 5px;
 }   
-
 .header-img {
     position: absolute;
     width: auto;
@@ -162,7 +152,6 @@ body {
     right: 50px; 
     z-index: 1;
 }
- 
 .header-button {
     font-family: "Newsreader";
     font-weight: 300;
@@ -180,13 +169,24 @@ body {
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
 }
-
 .header-button:hover {
     background: linear-gradient(to top, #C0A483, #231f13);
     transform: scale(1.05);
 }
 
-/*responsive frist section*/
+/* ----------- responsive frist section ---------*/
+
+@media screen and (min-width: 1024px){
+    .background{ padding-left: 600px;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
+        padding-top: 50px;
+        z-index: 2;  
+        position: absolute;}
+}
+    
 @media screen and (min-width: 1024px) {
     .background {
         padding-left: 600px;
@@ -195,66 +195,6 @@ body {
     }
 }
 
-/* Title and paragraph positioning */
-.header-title {
-    font-family: "Newsreader";
-    background: linear-gradient(to top, #231f13, #C0A483);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 90px;
-    z-index: 3;
-    position: absolute;
-    top: 5%;
-    left: 8%;
-}
-
-.header-par {
-    font-family: "Pinyon Script";
-    color: var(--soft-gray);
-    font-size: 25px;
-    z-index: 3;
-    position: absolute;
-    top: 15%;
-    left: 8%;
-    padding: 10px;
-    border-radius: 5px;
-}   
-
-/* Image styling */
-.header-img {
-    position: absolute;
-    width: auto;
-    height: 80vh;
-    padding-top: 50px;
-    right: 50px;
-    z-index: 1;
-}
-
-/* Header button styling */
-.header-button {
-    font-family: "Newsreader";
-    font-weight: 300;
-    text-decoration: none;
-    background: linear-gradient(to top, #231f13, #C0A483);
-    font-size: 20px;
-    z-index: 3;
-    position: absolute;
-    top: 65%;
-    left: 10%;
-    padding: 8px 16px;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.header-button:hover {
-    background: linear-gradient(to top, #C0A483, #231f13);
-    transform: scale(1.05);
-}
-
-/* Responsive styles for screens under 768px */
 @media (max-width: 768px) {
     .header {
         padding-bottom: 20%; 
@@ -276,7 +216,6 @@ body {
         padding-top: 0;
     }
 
-    /* Adjust the header image to be more responsive */
     .header-title {
         font-size: 50px;
         top: 5%;
@@ -312,15 +251,12 @@ body {
         transform: translateX(-50%);
         padding: 8px 18px;
     }
-
-    /* Adjust the background size */
     .background {
-        background-size: contain; /* Make background scale down appropriately */
-        background-attachment: scroll; /* Avoid fixed background */
+        background-size: contain; 
+        background-attachment: scroll; 
     }
 }
 
-/* Media Queries for Extra Small Screens (below 500px) */
 @media (max-width: 500px) {
     .header {
         padding-bottom: 20%; 
@@ -376,7 +312,119 @@ body {
         padding: 8px 18px;
     }
 }
-/*2nd section in home page */
+
+/* ------- Seconed section home page ------ */
+
+.about-us{
+    padding-top: 50px;
+    background-color: var(--dark-charcoal);
+    padding-bottom: 50px;
+    
+}
+.about-par{
+    font-family: "Pinyon Script";
+    color: var(--soft-gray);
+    font-size: 25px;
+    position:absolute ;
+    padding: 10px 50px;
+}   
+.about-us .title {
+    color: var(--muted-gold);
+}
+.about-container {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Align images vertically */
+    gap: 15px; /* Space between images */
+    margin-top: 90px;
+}
+.about-img {
+    width: 300px;
+    height: auto;
+    border: 5px solid var(--champage);
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.1);  /* Slight zoom on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    border-color: var(--muted-gold); /* Change border color on hover */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+   /* Optional: Makes sure it takes the full screen height */
+}
+.button{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: "Newsreader";
+    font-weight: 300;
+    background: linear-gradient(to top, #231f13, #C0A483); 
+    font-size: 20px;
+    padding: 10px 16px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    z-index: 3;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+
+}
+.button:hover {
+    background: linear-gradient(to top, #C0A483, #231f13);
+    transform: scale(1.05);
+}
+
+/* ----------- Responsive Seconed Section --------- */
+@media (max-width: 768px) {
+    .about-par {
+        font-size: 20px; /* Adjust font size */
+        padding: 10px 20px;
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack images on top of each other */
+    }
+
+    .about-img {
+        width: 80%; /* Make images responsive */
+        max-width: 400px; /* Limit maximum size */
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px 14px;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .about-par {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .about-img {
+        width: 90%; 
+        max-width: 350px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 12px;
+        margin-top: 10px;
+    }
+}
+
+/* -------- 3nd section in home page --------*/
+
 .artists {
     font-family: "Newsreader";
     text-align: center;
@@ -402,7 +450,6 @@ body {
     gap: 10%;
     margin-top: 30px;
 }
-
 .artist-info {
     font-family: "Newsreader";
     text-align: left;
@@ -413,12 +460,10 @@ body {
     color: var(--dark-charcoal); /* Improved readability */
     margin-bottom: 50px;
 }
-
 .image-container {
     position: relative;
     display: inline-block;
 }
-
 #artistImage {
     width: 350px; /* Increased size */
     height: 350px;
@@ -428,7 +473,6 @@ body {
     box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
     z-index: 3;
 }
-
 #artistTitle,
 #birthDate {
     font-size: 28px; /* Increased for better visibility */
@@ -437,7 +481,6 @@ body {
     text-align: left;
     font-family: "Pinyon Script";
 }
-
 #artistDescription {
     font-size: 20px;
     color: var(--soft-gray);
@@ -448,7 +491,9 @@ h3 , p{
     color:var(--muted-gold) ;
     font-weight: 300;
 }
-/*responsive second section*/
+
+/* --------- responsive Third section --------*/
+
 @media (max-width: 1024px) {
     .artist-container {
         gap: 5%; 
@@ -551,115 +596,8 @@ h3 , p{
     }
 }
 
-/*Third section home page*/
-.about-us{
-    padding-top: 50px;
-    background-color: var(--dark-charcoal);
-    padding-bottom: 50px;
-    
-}
-.about-par{
-    font-family: "Pinyon Script";
-    color: var(--soft-gray);
-    font-size: 25px;
-    position:absolute ;
-    padding: 10px 50px;
-}   
-.about-us .title {
-    color: var(--muted-gold);
-}
-.about-container {
-    display: flex;
-    justify-content: center; /* Center images horizontally */
-    align-items: center; /* Align images vertically */
-    gap: 15px; /* Space between images */
-    margin-top: 90px;
-}
-.about-img {
-    width: 300px;
-    height: auto;
-    border: 5px solid var(--champage);
-    border-radius: 10px;
-    object-fit: cover;
-    margin-bottom: 50px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
+/* ----- FOOTER -------- */
 
-.about-img:hover {
-    transform: scale(1.1);  /* Slight zoom on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
-    border-color: var(--muted-gold); /* Change border color on hover */
-}
-
-.button-container {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-   /* Optional: Makes sure it takes the full screen height */
-}
-.button{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: "Newsreader";
-    font-weight: 300;
-    background: linear-gradient(to top, #231f13, #C0A483); 
-    font-size: 20px;
-    padding: 10px 16px;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    border: none;
-    z-index: 3;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-
-}
-.button:hover {
-    background: linear-gradient(to top, #C0A483, #231f13);
-    transform: scale(1.05);
-}
-/* Medium Screens (Tablets) */
-@media (max-width: 768px) {
-    .about-par {
-        font-size: 20px; /* Adjust font size */
-        padding: 10px 20px;
-    }
-
-    .about-container {
-        flex-direction: column; /* Stack images on top of each other */
-    }
-
-    .about-img {
-        width: 80%; /* Make images responsive */
-        max-width: 400px; /* Limit maximum size */
-    }
-
-    button {
-        font-size: 18px;
-        padding: 8px 14px;
-        margin-top: 10px;
-    }
-}
-/* Small Screens (Mobile Phones) */
-@media (max-width: 480px) {
-    .about-par {
-        font-size: 18px;
-        padding: 10px;
-    }
-
-    .about-img {
-        width: 90%; 
-        max-width: 350px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 8px 12px;
-        margin-top: 10px;
-    }
-}
-/*FOOTER*/
 footer {
     background-color: var(--dark-charcoal);
     color: white;
@@ -730,8 +668,8 @@ footer {
     color: var(--muted-gold);
     transform: scale(1.2); 
 }
-/*Footer responsive*/
-/* Medium Screens (Tablets) */
+/* ---------- Footer responsive ------- */
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column; 
@@ -755,7 +693,6 @@ footer {
         padding-right: 0; 
     }
 }
-/* Small Screens (Mobile Phones) */
 @media (max-width: 480px) {
     .footer-container {
         padding: 0 10px;
@@ -784,7 +721,9 @@ footer {
 
     }
 }
-/*Gallery*/
+
+/* ------------ Gallery -------------- */
+
 .gallery {
     background-color: var(--dark-charcoal);
     display: grid;
@@ -864,7 +803,7 @@ footer {
 .date{
    font-family:"Pinyon Script" ;
 }
-/*Artists page*/
+/* --------------- Artists page ----------*/
 .container {
     background: var(--dark-charcoal);
     width: 100%;
@@ -953,7 +892,7 @@ footer {
     display: block; 
 }
 
-/* Responsive design */
+/* -------------Responsive design --------------*/
 @media (max-width: 768px) {
     .container h1 {
         font-size: 24px;
@@ -1023,8 +962,7 @@ footer {
     }
 }
 
-/*Contact us page*/
-/* Hero Section */
+/* ------------Contact us page ---------- */
 .hero {
     background-color:var(--dark-charcoal); 
     color: var(--champage);
@@ -1034,7 +972,6 @@ footer {
     font-size: 24px;
 }
 
-/* Contact Form (Postcard Style) */
 .contact-section {
     display: flex;
     justify-content: center;
@@ -1077,15 +1014,12 @@ footer {
     border: 1px solid var(--warm-brown);
 }
 
-/* Submit Button */
-
 .postcard-footer {
     text-align: right;
     font-size: 14px;
     color:var(--soft-gray);
 }
 
-/* Map Section */
 .map-section {
     padding: 40px;
     text-align: center;
